@@ -1,4 +1,4 @@
-var open = require('open');
+var open = require('react-dev-utils/openBrowser');
 
 /**
  * Creates a function that is restricted to invoking func once.
@@ -14,7 +14,7 @@ function once(fn) {
       called = true;
       fn.apply(this, arguments);
     }
-  }
+  };
 }
 
 /**
@@ -41,12 +41,12 @@ OpenBrowserPlugin.prototype.apply = function(compiler) {
   var browser = this.browser;
   var ignoreErrors = this.ignoreErrors;
   var executeOpen = once(function() {
-    setTimeout(function () {
-      open(url, browser, function(err) {
-        if (err) throw err;
-      });
+    setTimeout(function() {
+      if (!open(url)) {
+        throw err;
+      }
     }, delay);
-  })
+  });
 
   compiler.plugin('watch-run', function checkWatchingMode(watching, done) {
     isWatching = true;

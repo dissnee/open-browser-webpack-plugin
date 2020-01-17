@@ -1,18 +1,10 @@
-# THIS PACKAGE IS NOT MAINTAINED ANYMORE
-
-Honestly, I started with this just for fun without thinking in the maintenance and I'm really busy with other projects. However, not responding to any request is unrespectful. My apologies for that.
-
-If somebody want to take the ownership of this project, let me know.
-
-Before that, take in consideration that Webpack has evolved a lot and it has the ability to open a page without plugins. Maybe that's enough for your project.
-
-# Open Browser Webpack Plugin
+# Browser Open Webpack Plugin
 Opens a new browser tab when Webpack loads. Very useful if you're lazy and don't want to force yourself to open a new tab when Webpack is ready to play!
 
 ## Installation
 
 ```
-npm install open-browser-webpack-plugin --save-dev
+npm install browseropen-webpack-plugin --save-dev
 ```
 
 ## Usage
@@ -20,7 +12,7 @@ npm install open-browser-webpack-plugin --save-dev
 Simply require the plugin and add it in the **plugins** section:
 
 ```javascript
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var BrowserOpenPlugin = require('browseropen-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'lib/entry.js'),
@@ -29,7 +21,7 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    new OpenBrowserPlugin({ url: 'http://localhost:3000' })
+    new BrowserOpenPlugin({ url: 'http://localhost:3000' })
   ]
 };
 ```
