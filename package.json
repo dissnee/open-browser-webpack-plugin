@@ -1,6 +1,6 @@
 {
   "name": "browseropen-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Opens the browser when Webpack is ready serving your files.",
   "main": "index.js",
   "scripts": {
